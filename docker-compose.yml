@@ -8,4 +8,4 @@ services:
     restart: on-failure
     working_dir: /app
     command: >
-      bash -c "pip install discord.py youtube_dl asyncio PyNaCl ffmpeg ffmpeg-python && python app.py"
+      bash -c "pip install discord.py youtube_dl asyncio PyNaCl ffmpeg ffmpeg-python && python src/app.py"

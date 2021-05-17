@@ -15,6 +15,7 @@ bot = commands.Bot(command_prefix='!')
 # Create playlist
 playlist = []
 
+TOKEN = os.getenv('DISCORD_TOKEN')
 
 def ensure_dir(file_path):
     print(file_path)
@@ -172,13 +173,9 @@ async def add(ctx, chosenPlaylist, url):
     playlist[chosenPlaylist][name] = name
 #     ctx.guild.voice_client.play(discord.FFmpegPCMAudio(filename))
 
-# Take the secret token
-import json
-#token = json.loads(open('token.json', 'r').read())
-token = 'ODE5MTkzNjM1NzQ3NjU5ODE3.YEjDhg.UHRR8CrsRkNjL5E6kUMHhR5uU4o'
-print(token)
-
 # Run the bot
-print('The bot is ready')
-bot.run(token)
-
+if TOKEN:
+    print('The bot is ready.')
+    bot.run(TOKEN)
+else:
+    print('Token is missing.')
