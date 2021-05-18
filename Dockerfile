@@ -1,8 +1,5 @@
 FROM python:3
 
-ENV DATA_DIR=""
-ENV DISCORD_TOKEN=""
-
 RUN apt-get -o Acquire::Max-FutureTime=86400 update
 
 RUN apt-get install -y ffmpeg

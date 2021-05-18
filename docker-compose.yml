@@ -1,11 +1,10 @@
 version: '3'
 services:
-  app:
-    container_name: app
-    image: python:3
-    volumes:
-      - .:/app
+  bot:
+    container_name: bot
+    build:
+      context: .
+      dockerfile: Dockerfile
     restart: on-failure
-    working_dir: /app
-    command: >
-      bash -c "pip install discord.py youtube_dl asyncio PyNaCl ffmpeg ffmpeg-python && python src/app.py"
+    environment:
+      - DISCORD_TOKEN
